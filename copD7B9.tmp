@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ccuscklumktyp"]
+
+[ext_resource type="Script" path="res://copter.gd" id="1_2syie"]
+[ext_resource type="Texture2D" uid="uid://5cli1cr6vsfd" path="res://assets/copter/c1.png" id="1_ksekf"]
+[ext_resource type="Texture2D" uid="uid://bch6te5ehjy40" path="res://assets/copter/c2.png" id="2_2s8kh"]
+[ext_resource type="Texture2D" uid="uid://eqkjswrkb85s" path="res://assets/copter/c3.png" id="3_6x57m"]
+[ext_resource type="Texture2D" uid="uid://7lulmrvk7ynx" path="res://assets/copter/c4.png" id="4_dt3s1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_b03hl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ksekf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2s8kh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6x57m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dt3s1")
+}],
+"loop": true,
+"name": &"fly",
+"speed": 50.0
+}]
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_2syie")
+metadata/_edit_vertical_guides_ = [400.0]
+metadata/_edit_group_ = true
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+position = Vector2(400, 88)
+polygon = PackedVector2Array(0, -32, 96, -32, 24, 0, 40, 32, 0, 8, -40, 32, -24, 0, -88, -32)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(400, 88)
+sprite_frames = SubResource("SpriteFrames_b03hl")
+animation = &"fly"
+frame_progress = 0.790599

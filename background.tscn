@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4oh4fwdxp0xj"]
+
+[ext_resource type="Texture2D" uid="uid://m33p26l3b1f6" path="res://assets/kyivbackbgound/bg3.png" id="1_l78ld"]
+[ext_resource type="Texture2D" uid="uid://ch7y2y8hjjtb3" path="res://assets/kyivbackbgound/bg2.png" id="2_4pfsm"]
+[ext_resource type="Texture2D" uid="uid://bcubthq05n1b6" path="res://assets/kyivbackbgound/bg1.png" id="3_puyma"]
+
+[node name="Background" type="ParallaxBackground"]
+metadata/_edit_vertical_guides_ = [200.0]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer4"]
+offset_right = 400.0
+offset_bottom = 720.0
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0, 0)
+
+[node name="Bg3" type="Sprite2D" parent="ParallaxLayer"]
+position = Vector2(200, 200)
+scale = Vector2(0.854701, 0.877193)
+texture = ExtResource("1_l78ld")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(0.4, 0)
+
+[node name="Bg2" type="Sprite2D" parent="ParallaxLayer2"]
+position = Vector2(200, 352)
+texture = ExtResource("2_4pfsm")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="."]
+motion_scale = Vector2(1, 0)
+
+[node name="Bg1" type="Sprite2D" parent="ParallaxLayer3"]
+position = Vector2(200, 422)
+texture = ExtResource("3_puyma")
+
+[node name="LeftLimit" type="Marker2D" parent="."]
+position = Vector2(-1280, 360)
+
+[node name="RightLimit" type="Marker2D" parent="."]
+position = Vector2(1664, 344)

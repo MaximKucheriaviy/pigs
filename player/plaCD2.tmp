@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bwdbyrl0g0m2n"]
+
+[ext_resource type="Script" path="res://player/player.gd" id="1_gbjdf"]
+[ext_resource type="PackedScene" uid="uid://ccuscklumktyp" path="res://player/copter.tscn" id="1_i2xgu"]
+[ext_resource type="PackedScene" uid="uid://173s3r81wvlo" path="res://player/bomb.tscn" id="1_i6fy1"]
+
+[node name="Player" type="Node"]
+script = ExtResource("1_gbjdf")
+bombInstance = ExtResource("1_i6fy1")
+metadata/_edit_vertical_guides_ = [200.0]
+
+[node name="Copter" parent="." instance=ExtResource("1_i2xgu")]
+position = Vector2(200, 64)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(200, 360)
+drag_left_margin = 0.0
+drag_top_margin = 0.0
+drag_right_margin = 0.0
+drag_bottom_margin = 0.0

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://y4s6xumg2uwi"]
+
+[ext_resource type="PackedScene" uid="uid://corb880ps0o28" path="res://copter.tscn" id="1_dxmvt"]
+[ext_resource type="Script" path="res://main.gd" id="1_qme25"]
+[ext_resource type="PackedScene" uid="uid://cv57eyum2w6qk" path="res://bomb.tscn" id="2_k4yjv"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_qme25")
+
+[node name="Copter" parent="." instance=ExtResource("1_dxmvt")]
+position = Vector2(282, 77)
+rotation = 0.507891
+
+[node name="Bomb" parent="." instance=ExtResource("2_k4yjv")]
+position = Vector2(286, 151)
+freeze = true
+
+[node name="TestTimer" type="Timer" parent="."]
+wait_time = 1.509
+autostart = true
+
+[connection signal="timeout" from="TestTimer" to="." method="_on_test_timer_timeout"]
