@@ -8,6 +8,7 @@ var camerSpeed = 400
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	$AnimatedSprite2D.play("fly")
+	GlobalEvents.pigHitEvent.connect(impact)
 
 func _process(delta: float) -> void:
 	if Input.is_action_pressed("ui_right") and position.x < rightLimit:
@@ -19,3 +20,5 @@ func _process(delta: float) -> void:
 	else:
 		$AnimatedSprite2D.rotation = lerp_angle($AnimatedSprite2D.rotation, 0, rotation_speed * delta)
 		
+func impact():
+	print("I am impacted")

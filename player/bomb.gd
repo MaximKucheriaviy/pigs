@@ -2,8 +2,16 @@ extends RigidBody2D
 
 signal respawn
 
+func _ready() -> void:
+	GlobalEvents.pigHitEvent.connect(explode)
+	
+
+func explode():
+	hide()
+	freeze = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited() -> void:
+	print("ovescreen")
 	$RespawnTimer.start()
 	
 
