@@ -7,14 +7,19 @@
 
 [node name="Main" type="Node"]
 script = ExtResource("1_fatkv")
-PigInstance = ExtResource("4_c2r3a")
 
 [node name="Background" parent="." instance=ExtResource("1_683qi")]
 
 [node name="Player" parent="." instance=ExtResource("2_dyw8e")]
 
-[node name="PigSpavnTimer" type="Timer" parent="."]
-wait_time = 3.0
-autostart = true
+[node name="Pig" parent="." instance=ExtResource("4_c2r3a")]
+position = Vector2(179, 592)
 
-[connection signal="timeout" from="PigSpavnTimer" to="." method="spavnPig"]
+[node name="Pig2" parent="." instance=ExtResource("4_c2r3a")]
+position = Vector2(470, 652)
+
+[node name="Pig3" parent="." instance=ExtResource("4_c2r3a")]
+position = Vector2(30, 660)
+
+[node name="Pig4" parent="." instance=ExtResource("4_c2r3a")]
+position = Vector2(314, 532)

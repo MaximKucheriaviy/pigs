@@ -10,12 +10,11 @@ _data = {
 point_count = 3
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_c5hgu"]
-radius = 24.0
-height = 80.0
+radius = 15.0
+height = 58.0
 
-[node name="Pig" type="Node2D"]
+[node name="Pig" type="Node2D" groups=["Pigs"]]
 script = ExtResource("1_0mka8")
-metadata/_edit_group_ = true
 
 [node name="Path2D" type="Path2D" parent="."]
 position = Vector2(-88, 0)
@@ -30,11 +29,17 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D/Area2D"]
-position = Vector2(2, 2)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_c5hgu")
 
 [node name="Pig" type="Sprite2D" parent="Path2D/PathFollow2D/Area2D"]
 texture = ExtResource("1_nw80g")
+offset = Vector2(-1.66, -4.71)
+
+[node name="LeftBorder" type="Marker2D" parent="."]
+position = Vector2(-128, 0)
+
+[node name="RightBorder" type="Marker2D" parent="."]
+position = Vector2(128, 0)
 
 [connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
