@@ -11,6 +11,7 @@ metadata/_edit_vertical_guides_ = [200.0]
 
 [node name="Copter" parent="." instance=ExtResource("1_i2xgu")]
 position = Vector2(200, 64)
+rotation_speed = 10.0
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(199, 360)

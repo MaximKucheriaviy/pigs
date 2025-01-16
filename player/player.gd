@@ -11,7 +11,13 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	$Camera2D.position.x = lerp($Camera2D.position.x, $Copter.position.x, 0.07)
+	if Input.is_action_pressed("ui_right"):
+		$Camera2D.position.x = lerp($Camera2D.position.x, $Copter/RightMarker.global_position.x, 0.07)
+	elif Input.is_action_pressed("ui_left"):
+		$Camera2D.position.x = lerp($Camera2D.position.x, $Copter/LeftMarker.global_position.x, 0.07)
+	else:
+		$Camera2D.position.x = lerp($Camera2D.position.x, $Copter.global_position.x, 0.07)
+	
 	if Input.is_action_pressed("LaunchBomb"):
 		bombAttached = false
 		bomb.freeze = false
@@ -31,3 +37,9 @@ func lounchBomb():
 	bombAttached = false
 	bomb.freeze = false
 	bomb = null
+
+func setLimits(leftLimit: int, rightLimit: int):
+	$Copter.leftLimit = leftLimit
+	$Copter.rightLimit = rightLimit
+	$Camera2D.limit_left = leftLimit
+	$Camera2D.limit_right = rightLimit

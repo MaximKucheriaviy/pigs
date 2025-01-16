@@ -46,3 +46,9 @@ frame_progress = 0.301961
 
 [node name="BombAttach" type="Marker2D" parent="."]
 position = Vector2(7.62939e-06, 0)
+
+[node name="LeftMarker" type="Marker2D" parent="."]
+position = Vector2(-192, 0)
+
+[node name="RightMarker" type="Marker2D" parent="."]
+position = Vector2(192, 0)
