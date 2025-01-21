@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dbic6dcabkwro"]
+[gd_scene load_steps=6 format=3 uid="uid://dbic6dcabkwro"]
 
 [ext_resource type="PackedScene" uid="uid://c4oh4fwdxp0xj" path="res://background.tscn" id="1_683qi"]
 [ext_resource type="Script" path="res://main.gd" id="1_fatkv"]
 [ext_resource type="PackedScene" uid="uid://bwdbyrl0g0m2n" path="res://player/player.tscn" id="2_dyw8e"]
 [ext_resource type="PackedScene" uid="uid://dvulyu0vmnbcg" path="res://Pig/pig.tscn" id="4_c2r3a"]
+[ext_resource type="PackedScene" uid="uid://dok141e5wek7j" path="res://explosition.tscn" id="5_u480k"]
 
 [node name="Main" type="Node"]
 script = ExtResource("1_fatkv")
@@ -16,5 +17,8 @@ PigInstance = ExtResource("4_c2r3a")
 [node name="PigSpavnTimer" type="Timer" parent="."]
 wait_time = 3.0
 autostart = true
+
+[node name="Explosition" parent="." instance=ExtResource("5_u480k")]
+position = Vector2(184, 624)
 
 [connection signal="timeout" from="PigSpavnTimer" to="." method="spavnPig"]

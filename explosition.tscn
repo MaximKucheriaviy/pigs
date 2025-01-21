@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dok141e5wek7j"]
+
+[ext_resource type="Script" path="res://explosition.gd" id="1_si65f"]
+
+[sub_resource type="Curve" id="Curve_5lobl"]
+_data = [Vector2(0.00251256, 1), 0.0, 0.0, 0, 0, Vector2(0.992462, 0.109434), 0.333753, 0.0, 0, 0]
+point_count = 2
+
+[node name="Explosition" type="CPUParticles2D"]
+emitting = false
+amount = 100
+lifetime = 0.3
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_max = 127.95
+scale_amount_min = 3.0
+scale_amount_max = 3.0
+scale_amount_curve = SubResource("Curve_5lobl")
+color = Color(0.28485, 0.28485, 0.28485, 1)
+script = ExtResource("1_si65f")

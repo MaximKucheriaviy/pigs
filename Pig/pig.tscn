@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://dvulyu0vmnbcg"]
+[gd_scene load_steps=6 format=3 uid="uid://dvulyu0vmnbcg"]
 
 [ext_resource type="Script" path="res://Pig/pig.gd" id="1_0mka8"]
 [ext_resource type="Texture2D" uid="uid://sijo761smvfo" path="res://assets/Pigs/Pig.png" id="1_nw80g"]
+[ext_resource type="PackedScene" uid="uid://dok141e5wek7j" path="res://explosition.tscn" id="3_sjv2q"]
 
 [sub_resource type="Curve2D" id="Curve2D_61o2s"]
 _data = {
@@ -32,6 +33,9 @@ collision_mask = 2
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_c5hgu")
 
+[node name="Explosition" parent="Path2D/PathFollow2D/Area2D" instance=ExtResource("3_sjv2q")]
+position = Vector2(-1, 0)
+
 [node name="Pig" type="Sprite2D" parent="Path2D/PathFollow2D/Area2D"]
 texture = ExtResource("1_nw80g")
 offset = Vector2(-1.66, -4.71)
@@ -43,3 +47,4 @@ position = Vector2(-128, 0)
 position = Vector2(128, 0)
 
 [connection signal="body_entered" from="Path2D/PathFollow2D/Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="finished" from="Path2D/PathFollow2D/Area2D/Explosition" to="." method="_on_explosition_finished"]

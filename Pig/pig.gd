@@ -36,10 +36,16 @@ func setScale(scaleParam: float):
 func _on_area_2d_body_entered(body) -> void:
 	GlobalEvents.pigHitEmit()
 	get_tree().call_group("Pigs", 'setMove')
-	queue_free()
+	$Path2D/PathFollow2D/Area2D/Pig.hide()
+	$Path2D/PathFollow2D/Area2D/Explosition.emit()
+	
 
 func setMove():
 	isMove = true
 	
 func getPathRange() -> float:
 	return abs($RightBorder.position.x - $LeftBorder.position.x)
+
+
+func _on_explosition_finished() -> void:
+	queue_free()
